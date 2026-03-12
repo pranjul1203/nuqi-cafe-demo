@@ -1,21 +1,11 @@
 import { defineConfig } from 'vite'
-import path from 'path'
-import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/nuqi-cafe-demo/',   // important for deployment
-
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
-
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': '/src',
     },
   },
-
-  assetsInclude: ['**/*.svg', '**/*.csv'],
 })
